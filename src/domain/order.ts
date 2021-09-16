@@ -1,6 +1,6 @@
 import { Cart } from './cart';
-import { PriceCents } from './product';
-import { UniqueId } from './user';
+import { PriceCents, totalPrice } from './product';
+import { UniqueId, User } from './user';
 
 export type OrderStatus = 'new' | 'delivery' | 'complete';
 export type DateTimeString = string;
@@ -12,3 +12,13 @@ export type Order = {
   status: OrderStatus;
   total: PriceCents;
 }
+
+export const createOrder = (user: User, cart: Cart): Order => {
+  return {
+    cart,
+    user: user.id,
+    created: new Date().toISOString(),
+    status: 'new',
+    total: totalPrice(cart.products)
+  };
+};
