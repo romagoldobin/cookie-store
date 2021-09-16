@@ -26,5 +26,6 @@ module.exports = {
     'quotes': ['error', 'single'],
     'indent': ['error', 2],
     'semi': [2, 'always'],
+    'eol-last': ['error', 'always'],
   }
 };
