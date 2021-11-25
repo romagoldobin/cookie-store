@@ -1,17 +1,7 @@
-import { Cart } from './cart';
-import { PriceCents, totalPrice } from './product';
-import { UniqueId, User } from './user';
-
-export type OrderStatus = 'new' | 'delivery' | 'complete';
-export type DateTimeString = string;
-
-export type Order = {
-  user: UniqueId;
-  cart: Cart;
-  created: DateTimeString;
-  status: OrderStatus;
-  total: PriceCents;
-}
+import { Cart } from '../interface/TCart';
+import { Order } from '../interface/TOrder';
+import { User } from '../interface/TUser';
+import { totalPrice } from './product';
 
 export const createOrder = (user: User, cart: Cart): Order => {
   return {

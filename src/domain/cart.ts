@@ -1,8 +1,5 @@
-import { Product } from './product';
-
-export type Cart = {
-  products: Product[];
-}
+import { Cart } from '../interface/TCart';
+import { Product } from '../interface/TProduct';
 
 export const addProduct = (cart: Cart, product: Product): Cart => {
   return { ...cart, products: [...cart.products, product] };
