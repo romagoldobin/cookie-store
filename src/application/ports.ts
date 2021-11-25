@@ -1,5 +1,6 @@
-import { Order } from '../domain/order';
-import { PriceCents } from '../domain/product';
+import { Order } from '../interface/TOrder';
+import { PriceCents } from '../sharedTypes';
+
 
 export interface PaymentService {
   tryPay(amout: PriceCents): Promise<boolean>;
